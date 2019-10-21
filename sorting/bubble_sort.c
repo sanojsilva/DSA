@@ -1,5 +1,6 @@
 // most simplest sorting algorithm
 // bubble sort sorts the array by repeatedly swapping the adjacent elements in the array
+//By DumiduKasun
 
 #include <stdio.h>
 #define MAX 20
