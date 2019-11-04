@@ -66,3 +66,15 @@ int main() {
     
     return 0;
 }
+
+
+/*
+REAL LIFE EXAMPLES FOR SELECTION SORT
+=====================================
+
+👉 Consider you have 8 shoes pairs with sizes 6 to 13. You find them not in order. Their arrangement from smallest to largest will be an example of selection sort
+
+
+👉 Now consider another example if you have 200 glasses of different volume 100 ml, 110 ml, 120 ml, 130 ml, …. , 2080 ml and 2090 ml. You find them spread on a room floor and want to place them such that the 2090 glass, then 2080 glass inside it, then 2070 glass inside it and so on. This sort method is inefficient on large lists because searching for the exact size will take a lot of time but this is the way selection sort works.
+
+*/
