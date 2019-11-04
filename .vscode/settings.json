@@ -1,5 +1,8 @@
 {
     "workbench.colorCustomizations": {
+        "[Cobalt2]": {
+            "gitDecoration.ignoredResourceForeground": "#808080"
+        },
         "activityBar.background": "#2B2E26",
         "titleBar.activeBackground": "#3D4136",
         "titleBar.activeForeground": "#F9FAF9"

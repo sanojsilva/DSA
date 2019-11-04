@@ -41,3 +41,14 @@ int main() {
 
     return 0;
 }
+
+/* 
+
+REAL LIFE SCENARIOS FOR BUBBLE SORT
+===================================
+
+👉 Lined up in a random order in front of the teacher, who’s put to the task of lining you all up in an ascending order of height. The bubble sort algorithm comes in handy here. In this case every person’s height is an element of the list. With every pass that the teacher goes over the students, they slowly start standing in a more orderly fashion till all of them stand according to height.
+
+👉 One example of a kind of “concurrent bubble sort” might be represented in the behavior of cars on a long two-lane road; for example California Highway 138 across the Mojave desert. Each time one car passes another, the positions are swapped. The decision to pass is local; it is considered only in the context of the relative speeds of the two cars involved. No car is ever picked up and transported to the front of the pack. Eventually, the cars tend to be sorted by speed, using local swaps of car positions.
+
+*/
