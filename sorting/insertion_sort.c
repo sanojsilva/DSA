@@ -1,90 +1,32 @@
-/*
-👉 Before Main Loop:
-    3, 12, 1, 5, 6
-👉 Before Inner Loop:
-    3, 12, 1, 5, 6
-👉 After Main Loop:
-    3, 12, 1, 5, 6
-
-👉 Before Main Loop:
-    3, 12, 1, 5, 6
-👉 Before Inner Loop:
-    3, 12, 1, 5, 6
-👉 After Inner Loop:
-    3, 1, 12, 5, 6
-👉 Before Inner Loop:
-    3, 1, 12, 5, 6
-👉 After Inner Loop:
-    1, 3, 12, 5, 6
-👉 After Main Loop:
-    1, 3, 12, 5, 6
-
-👉 Before Main Loop:
-    1, 3, 12, 5, 6
-👉 Before Inner Loop:
-    1, 3, 12, 5, 6
-👉 After Inner Loop:
-    1, 3, 5, 12, 6
-👉 Before Inner Loop:
-    1, 3, 5, 12, 6
-👉 After Main Loop:
-    1, 3, 5, 12, 6
-
-👉 Before Main Loop:
-    1, 3, 5, 12, 6
-👉 Before Inner Loop:
-    1, 3, 5, 12, 6
-👉 After Inner Loop:
-    1, 3, 5, 6, 12
-👉 Before Inner Loop:
-    1, 3, 5, 6, 12
-👉 After Main Loop:
-    1, 3, 5, 6, 12
-*/
-
 #include <stdio.h>
+#define N 8
 
-void printArray(int arr[]) {
-    // print out the sorted array
-    for (int i = 0; i < 5; i++) {
-        if (i == 4) {
-            printf("%d\n", arr[i]);
-        } else {
+int arr[N] = {3, 5, 1, 20, 12, 6, 8, 7};
+
+void printArray() {
+    int i;
+    for (i = 0; i < N; i++) {
+        if (i != N - 1) {
             printf("%d, ", arr[i]);
+        } else {
+            printf("%d\n", arr[i]);
         }
     }
 }
 
 int main() {
-    int arr[5] = {3, 12, 1, 5, 6};
-    int i, j, temp;
+    int i;
 
-    for ( i = 1; i < 5; i++) {
-        // printf("Before Main Loop: \n");
-        // printArray(arr);
-
-        for (j = i; j > 0; j--) {
-            // printf("Before Inner Loop: \n");
-            // printArray(arr);
-            if (arr[j] < arr[j-1]) {
-                temp = arr[j-1];
-                arr[j-1] = arr[j];
-                arr[j] = temp;
-            } else {
-                break;
-            }
-            // printf("After Inner Loop: \n");
-            // printArray(arr);
+    for (i = 1; i < N; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j+1] = arr[j];
+            j--;
         }
-        // printf("After Main Loop: \n");
-        // printArray(arr);
-        printf("\n");
-        // break;
+        arr[j+1] = key;
     }
-    
-        // printArray(arr);
-    
 
-    
+    printArray();
     return 0;
 }
