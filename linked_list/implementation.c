@@ -37,6 +37,31 @@ void append(struct Node* newNode) {
     }
 }
 
+void deleteGiveNode(int value) {
+    if (start == NULL) {
+        printf("Linked list is Empty\n");
+    } else {
+        struct Node* ptr = start;
+        struct Node* prePtr = start;
+
+        if (ptr->data == value) {
+            start = ptr->next;
+            free(ptr);
+            return;
+        };
+
+        while(ptr != NULL) {
+            if (ptr->data == value) {
+                prePtr->next = ptr->next;
+                free(ptr);
+            }
+            prePtr = ptr;
+            ptr = ptr->next;
+        }
+    }
+
+}
+
 void printList() {
     struct Node* tmp = start;
     while(tmp != NULL) {
@@ -53,10 +78,11 @@ int main() {
         prepend(createNode(i));
     }
 
+    // for (i = 1; i < 6; i++) {
+    //     append(createNode(i));
+    // }
 
-    for (i = 1; i < 6; i++) {
-        append(createNode(i));
-    }
+    deleteGiveNode(4);
     printList();
     return 0;
 }
